@@ -1,0 +1,25 @@
+# Configuration for Cog ⚙️
+# Reference: https://cog.run/yaml
+
+build:
+  gpu: true
+  cuda: "12.1"
+  python_version: "3.11"
+  system_packages:
+    - "ffmpeg"
+    - "libsm6"
+    - "libxext6"
+    - "wget"
+  python_packages:
+    - "torch>=2.2.0"
+    - "torchvision"
+    - "diffusers>=0.28.0"
+    - "transformers>=4.40.0"
+    - "accelerate>=0.29.0"
+    - "safetensors>=0.4.3"
+    - "invisible-watermark>=0.2.0"
+    - "peft>=0.10.0"
+    - "numpy<2.0.0"
+    - "pydantic>=2.0"
+
+predict: "predict.py:Predictor"
