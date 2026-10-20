@@ -24,7 +24,11 @@ jobs:
       - name: Setup Cog
         uses: replicate/setup-cog@v2
         with:
-          token_input: ${{ secrets.REPLICATE_API_TOKEN }}
+          token: ${{ secrets.REPLICATE_API_TOKEN }}
+
+      - name: Authenticate to Replicate
+        run: |
+          echo "${{ secrets.REPLICATE_API_TOKEN }}" | cog login --token-stdin
 
       - name: Download Model Weights from Hugging Face
         run: |
